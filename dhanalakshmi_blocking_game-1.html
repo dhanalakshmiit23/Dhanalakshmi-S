@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhanalakshmi - Blocking Game</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    font-family:Arial,sans-serif; background:linear-gradient(135deg,#f8d9ff,#d9e8ff);
+    color:#222;
+  }
+  .card{
+    width:min(92%,420px); background:white; border-radius:28px; padding:34px 25px;
+    text-align:center; box-shadow:0 15px 45px rgba(0,0,0,.15);
+  }
+  .emoji{font-size:55px}
+  h1{font-size:28px;margin:12px 0}
+  p{font-size:18px;line-height:1.5}
+  .highlight{font-weight:700;color:#8b35c9}
+  button{
+    border:0; border-radius:999px; padding:15px 28px; font-size:17px;
+    font-weight:700; cursor:pointer; background:#8b35c9; color:white;
+    box-shadow:0 8px 18px rgba(139,53,201,.3);
+  }
+  button:active{transform:scale(.97)}
+  #result{display:none;margin-top:22px;font-size:20px;font-weight:700}
+  .small{font-size:13px;color:#777;margin-top:20px}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🎭</div>
+    <h1>Dhanalakshmi is <span class="highlight">blocking</span> 🚫📱</h1>
+    <p>her <i>fake</i> friends...</p>
+    <p>Will she <b>block you</b> as well? 👀</p>
+    <p>Let's see 👇</p>
+    <button onclick="reveal()">Find Out</button>
+    <div id="result"></div>
+    <div class="small">Just for fun 😄</div>
+  </div>
+
+<script>
+function reveal(){
+  const results = [
+    "😎 You're safe... not blocked!",
+    "😂 Hmm... you're on the watchlist!",
+    "👀 Dhanalakshmi is thinking about it...",
+    "💜 Lucky you! You're not a fake friend!"
+  ];
+  const result = results[Math.floor(Math.random()*results.length)];
+  document.getElementById("result").textContent = result;
+  document.getElementById("result").style.display = "block";
+}
+</script>
+</body>
+</html>
