@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhanalakshmi's Block Test 🚫📱</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 25px;
+    padding: 30px 22px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.emoji {
+    font-size: 55px;
+}
+
+h1 {
+    color: #222;
+    font-size: 27px;
+    margin: 15px 0;
+}
+
+p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 16px;
+    margin: 15px 0;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #ff416c;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#result {
+    display: none;
+    margin-top: 22px;
+    padding: 18px;
+    background: #fff0f3;
+    border-radius: 15px;
+}
+
+.share {
+    margin-top: 12px;
+    background: #222;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="emoji">🚫📱</div>
+
+    <h1>Dhanalakshmi is blocking her fake friends!</h1>
+
+    <p>
+        Will she block <b>YOU</b> as well? 😳
+        <br>
+        Let's see 👇
+    </p>
+
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+    >
+
+    <button onclick="checkBlock()">
+        🔍 Check Your Result
+    </button>
+
+    <div id="result"></div>
+
+    <button class="share" onclick="sharePage()">
+        📤 Share With Friends
+    </button>
+
+</div>
+
+<script>
+
+function checkBlock() {
+
+    let name = document.getElementById("name").value.trim();
+
+    if (name === "") {
+        alert("Please enter your name 😄");
+        return;
+    }
+
+    let result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    result.innerHTML =
+        "👀 <b>" + name + "</b><br><br>" +
+        "Checking Dhanalakshmi's block list... 🔄<br><br>" +
+        "😱 OMG! You're SAFE... for now! 😂❤️";
+
+}
+
+function sharePage() {
+
+    if (navigator.share) {
+
+        navigator.share({
+            title: "Dhanalakshmi's Block Test 🚫📱",
+            text: "Will Dhanalakshmi block you? 😳 Check your result!",
+            url: window.location.href
+        });
+
+    } else {
+
+        navigator.clipboard.writeText(window.location.href);
+
+        alert("Link copied! 📋 Send it to your friends!");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
